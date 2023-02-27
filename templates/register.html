@@ -1,0 +1,20 @@
+{% extends 'login.html' %}
+{% block content %}
+<h3>Register</h3>
+{% for message in messages %}
+<h6 style="color:red">{{message}}</h6>
+{% endfor %}
+<h6 style="color:red">{{form.errors}}</h6>
+
+<form method="post">
+{% csrf_token %}
+
+    {% for field in form %}
+    {{field.label}}: <br>
+    {{field}} <br><br>
+    {% endfor %}
+
+    <button type="submit">Register</button><br><br>
+</form>
+have an account click <a href="{%url 'SignIn' %}">Here</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container mt-5">
+    {% for item in product %}
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{item.img.url}}" width="90%" height="90%" alt="">
+
+        </div>
+        <div class="col-md-8" style="padding: 30px;">
+            <h3>Product Name: {{item.pname}}</h3>
+            <h3>Product Price:{{item.Price}}</h3>
+            <h3>Product Category: {{item.date}}</h3>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
